@@ -1,0 +1,27 @@
+<!-- views/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Food</title>
+  </head>
+  <body>
+    <h1>Create a New Food!</h1>
+    <form action="/food" method="POST">
+        <label for="name">FoodName:</label>
+        <input type="text" name="name" id="name" />
+    
+        <label for="Discription">Discription:</label>
+        <input type="text" name="Discription" id="Discription" />
+
+        <label for="Cuisine">cuisine:</label>
+        <input type="text" name="cuisine" id="cuisine" />
+    
+        <button type="submit">Add Food</button>
+      </form>
+    
+<a href="/food/">Back to Food</a>
+  </body>
+</html>

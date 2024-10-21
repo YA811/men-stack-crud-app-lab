@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= food.name %></title>
+</head>
+<body>
+    <h1><%= food.name %></h1>
+    <form action="/food/<%=food._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= food.name %></button>
+      </form>
+<br/>
+      <a href="/food/<%= food._id %>/edit">Edit <%= food.name %></a>
+    <a href="/food/">Back to food</a>
+</body>
+</html>
