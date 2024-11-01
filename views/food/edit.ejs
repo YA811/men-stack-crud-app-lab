@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1><%= food.name %></h1>
-    <form action="/food/<%=food._id%>?_method=PUT" method="POST"></form>
+    <form action="/food/<%=food._id%>?_method=PUT" method="POST">
         <label for="name">FoodName:</label>
         <input type="text" name="name" value="<%= food.name %>" />
     
@@ -18,8 +18,9 @@
         <input type="text" name="cuisine" id="cuisine" />
     
         <button type="submit">Update Food</button>
+</form>
 
         <a href="/food/">Back to Food</a>
-      </form>
+      
 </body>
 </html>

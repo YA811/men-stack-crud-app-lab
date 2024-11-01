@@ -35,19 +35,19 @@ res.render("food/index.ejs",{Food: allFood});
 //creating new food
 //get new food
 app.get("/food/new", async (req, res)=>{
-    res.render("new.ejs");
+    res.render("food/new.ejs");
 });
 
 //show route
 app.get("/food/:foodId", async (req, res)=>{
     const foundFood = await Food.findById(req.params.foodId);
-    res.render("show.ejs", {food: foundFood});
+    res.render("food/show.ejs", {food: foundFood});
 });
 
 //post the new food
 app.post("/food", async (req, res) => {
  await Food.create(req.body);
-    res.redirect("/food/new");
+    res.redirect("/food");
   });
 
   //delete food
@@ -59,13 +59,13 @@ app.post("/food", async (req, res) => {
   //edit food 
   app.get("/food/:foodId/edit", async (req, res) => {
     const foundFood = await Food.findById(req.params.foodId);
-    res.render("edit.ejs", {food: foundFood});
+    res.render("food/edit.ejs", {food: foundFood});
   });
 
 //update the food 
 app.put("/food/:foodId", async (req, res) => {
   
-    await Food.findByIdAndUpdate(req.params.foodId);
+    await Food.findByIdAndUpdate(req.params.foodId, req.body);
     res.redirect(`/food/${req.params.foodId}`);
   });
   
